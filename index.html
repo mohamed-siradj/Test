@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit card</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- boxicon link -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <!-- css file -->
-  <link rel="stylesheet" href="day-02.css">
-  <title> day 02 | To Do List</title>
-</head>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- icons css file-->
+    <link rel="stylesheet" href="styles/all.css" />
 
-<body>
-  <div class="container">
-    
-    <h2>My To-Do List <img src="img/icon.png" ><p id="date">hello</p></h2>
-    <div class="create-task">
-      <input type="text" class="todo-input" placeholder="Add new task">
-      <button type="submit" onclick="addTask()">Add</button>
-    </div>
-    <ul id="list-container">
-    <!--
-      <li class="checked">Task 01</li>
-      <li>Task 02</li>
-      <li>Task 03</li>
-     -->
-    </ul>
-  </div>
-  <script src="day-02.js"></script>
-</body>
+  </head>
 
-</html
+  <body>
+      <div class="container">
+        <div class="header">
+          <h2>Payment Details</h2>
+          <i class="fa-brands fa-cc-visa"></i>
+        </div>
+        <div class="content">
+          <h4>Card Number</h4>
+          <input type="text" placeholder="1234 1234 1234 1234">
+        </div>
+        <div class="footer">
+          <div class="info">
+            <p>Month</p>
+            <p class="value">May</p>
+          </div>
+          <div class="info">
+            <p>Year</p>
+            <p class="value">2025</p>
+          </div>
+          <div class="info">
+            <p class="cvv">CVV</p>
+            <p class="value">123</p>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
