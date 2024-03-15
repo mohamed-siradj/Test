@@ -1,0 +1,154 @@
+/* Start Global rules*/
+
+:root {
+  --bg-color: #DAC0A3;
+  --beige2-color: #EADBC8;
+  --blue-color: #102C57;
+}
+
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Open sans', sans-serif;
+  background-color: var(--bg-color);
+}
+.container {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; 
+}
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin: 10px 0;
+  color: var(--blue-color);
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+  transition: all 0.2s linear;
+}
+input {
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  color: var(--blue-color);
+}
+input:focus {
+  transform: scale(1.1);
+}
+.price {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.price input {
+  width: 20%;
+}
+.price p {
+  padding: 5px 10px;
+  background-color: var(--beige2-color);
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--blue-color);
+  border-radius: 5px;
+  height: 30px;
+  text-align: center;
+  line-height: 20px;
+}
+button {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius:20px;
+  background-color: var(--blue-color);
+  color: var(--beige2-color);
+  width: 40%;
+  margin-top: 10px;
+  cursor: pointer;
+}
+button:active{ 
+  transform: scale(0.90);
+}
+.searchBlock {
+  width: 100%;
+  margin-top: 20px;
+}
+.btnSearch {
+  display: flex;
+  justify-content: space-between;
+}
+.btnSearch button {
+  width: 45%;
+}
+.outputs {
+  margin-top: 20px;
+  background-color: var(--beige2-color);
+  border-radius: 10px;
+  color: var(--blue-color);
+  padding: 10px;
+}
+
+.outputs button {
+  margin: 0;
+  width: 100%;
+  font-size: 14px;
+  padding: 5px;
+}
+#deleteBtn {
+ margin: 10px 0;
+ width: 100%;
+}
+table {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+table th {
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+table td {
+  padding-bottom: 5px;
+}
