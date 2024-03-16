@@ -162,7 +162,7 @@ function searchData(value) {
     if (searchMode === 'title') {
       if (productData[i].title.includes(value.toLowerCase())) {
         table += `
-                    <td>${i}</td>
+                    <td>${i+1}</td>
                     <td>${productData[i].title}</td>
                     <td>${productData[i].price}</td>
                     <td>${productData[i].taxes}</td>
@@ -178,7 +178,7 @@ function searchData(value) {
     } else {
       if (productData[i].category.includes(value.toLowerCase())) {
         table += `
-                        <td>${i}</td>
+                        <td>${i+1}</td>
                         <td>${productData[i].title}</td>
                         <td>${productData[i].price}</td>
                         <td>${productData[i].taxes}</td>
