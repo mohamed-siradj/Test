@@ -154,27 +154,9 @@ function getSearchMode(id) {
 }
 function searchData(value) {
   let table = '';
-  if (searchMode === 'title') {
-    for (let i = 0; i < productData.length; i++) {
+  for (let i = 0; i < productData.length; i++) {
+    if (searchMode === 'title') {
       if (productData[i].title.includes(value.toLowerCase())) {
-        table += `
-                <td>${i}</td>
-                <td>${productData[i].title}</td>
-                <td>${productData[i].price}</td>
-                <td>${productData[i].taxes}</td>
-                <td>${productData[i].ads}</td>
-                <td>${productData[i].discount}</td>
-                <td>${productData[i].total}</td>
-                <td>${productData[i].category}</td>
-                <td><button onclick="updateProduct(${i})" id="update">Update</button></td>
-                <td><button onclick="deleteProduct(${i})" id="delete">Delete</button></td>
-              </tr>
-            `;
-      }
-    }
-  } else {
-    for (let i = 0; i < productData.length; i++) {
-      if (productData[i].category.includes(value.toLowerCase())) {
         table += `
                     <td>${i}</td>
                     <td>${productData[i].title}</td>
@@ -189,8 +171,25 @@ function searchData(value) {
                   </tr>
                 `;
       }
+    } else {
+      if (productData[i].category.includes(value.toLowerCase())) {
+        table += `
+                        <td>${i}</td>
+                        <td>${productData[i].title}</td>
+                        <td>${productData[i].price}</td>
+                        <td>${productData[i].taxes}</td>
+                        <td>${productData[i].ads}</td>
+                        <td>${productData[i].discount}</td>
+                        <td>${productData[i].total}</td>
+                        <td>${productData[i].category}</td>
+                        <td><button onclick="updateProduct(${i})" id="update">Update</button></td>
+                        <td><button onclick="deleteProduct(${i})" id="delete">Delete</button></td>
+                      </tr>
+                    `;
+      }
     }
   }
+
   document.getElementById('tbody').innerHTML = table;
 }
 
