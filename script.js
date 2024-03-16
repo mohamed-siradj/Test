@@ -44,25 +44,29 @@ createBtn.onclick = function () {
     count: count.value,
     category : category.value.toLowerCase()
   }
-  if (mode === 'create') {
+  if (title.value !== '' && price.vlue !== '' && category.value !== '' && newProduct.count < 100) {
     
-    if (newProduct.count > 1) {
-      for (let i = 0; i < newProduct.count; i++) {
+    if (mode === 'create') {
+    
+      if (newProduct.count > 1) {
+        for (let i = 0; i < newProduct.count; i++) {
+          productData.push(newProduct);
+        }
+      } else {
         productData.push(newProduct);
       }
-    } else {
-      productData.push(newProduct);
-    }
     
-  } else {
-    productData[dummyVariable] = newProduct;
-    count.style.display = 'block';
-    createBtn.innerHTML = 'Create';
-    mode = 'create';
+    } else {
+      productData[dummyVariable] = newProduct;
+      count.style.display = 'block';
+      createBtn.innerHTML = 'Create';
+      mode = 'create';
+    }
+    clearData();
+
   }
   localStorage.setItem('product',JSON.stringify(productData));
   //console.log(productData);
-  clearData();
   showData();
 }
 // console.log(localStorage.product);
