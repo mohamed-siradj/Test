@@ -149,6 +149,8 @@ function getSearchMode(id) {
     search.placeholder = 'Search by Category';
   }
   search.focus();
+  search.value = '';
+  showData();
 }
 function searchData(value) {
   let table = '';
