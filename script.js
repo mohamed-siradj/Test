@@ -35,14 +35,14 @@ if (localStorage.product) {
 
 createBtn.onclick = function () {
   let newProduct = {
-    title: title.value,
+    title: title.value.toLowerCase(),
     price: price.value,
     taxes: taxes.value,
     ads: ads.value,
     discount: discount.value,
     total: result,
     count: count.value,
-    category : category.value
+    category : category.value.toLowerCase()
   }
   if (mode === 'create') {
     
@@ -150,3 +150,45 @@ function getSearchMode(id) {
   }
   search.focus();
 }
+function searchData(value) {
+  let table = '';
+  if (searchMode === 'title') {
+    for (let i = 0; i < productData.length; i++) {
+      if (productData[i].title.includes(value.toLowerCase())) {
+        table += `
+                <td>${i}</td>
+                <td>${productData[i].title}</td>
+                <td>${productData[i].price}</td>
+                <td>${productData[i].taxes}</td>
+                <td>${productData[i].ads}</td>
+                <td>${productData[i].discount}</td>
+                <td>${productData[i].total}</td>
+                <td>${productData[i].category}</td>
+                <td><button onclick="updateProduct(${i})" id="update">Update</button></td>
+                <td><button onclick="deleteProduct(${i})" id="delete">Delete</button></td>
+              </tr>
+            `;
+      }
+    }
+  } else {
+    for (let i = 0; i < productData.length; i++) {
+      if (productData[i].category.includes(value.toLowerCase())) {
+        table += `
+                    <td>${i}</td>
+                    <td>${productData[i].title}</td>
+                    <td>${productData[i].price}</td>
+                    <td>${productData[i].taxes}</td>
+                    <td>${productData[i].ads}</td>
+                    <td>${productData[i].discount}</td>
+                    <td>${productData[i].total}</td>
+                    <td>${productData[i].category}</td>
+                    <td><button onclick="updateProduct(${i})" id="update">Update</button></td>
+                    <td><button onclick="deleteProduct(${i})" id="delete">Delete</button></td>
+                  </tr>
+                `;
+      }
+    }
+  }
+  document.getElementById('tbody').innerHTML = table;
+}
+
